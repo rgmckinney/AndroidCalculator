@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="25dp">
+
+
+    <LinearLayout
+        android:id="@+id/mainBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="-7dp">
+
+        <LinearLayout
+            android:id="@+id/topRow"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/fieldTypeRow"
+                style="?@android:attr/buttonBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/mainDisplay"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="16dp">
+
+                <Button
+                    android:id="@+id/typeButtonBin"
+                    style="@style/AppTheme.TypeButton"
+                    android:layout_width="49dp"
+                    android:layout_height="match_parent"
+                    android:checked="true"
+                    android:text="BIN" />
+
+                <Button
+                    android:id="@+id/typeButtonHex"
+                    style="@style/AppTheme.TypeButton"
+                    android:layout_width="52dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="HEX" />
+
+                <Button
+                    android:id="@+id/typeButtonDec"
+                    style="@style/AppTheme.TypeButton"
+                    android:layout_width="51dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="DEC" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/sideDisplay"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="0.91"
+                android:background="@color/displayBackground"
+                android:paddingLeft="8dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@+id/mainDisplay"
+                app:layout_constraintLeft_toRightOf="@+id/fieldTypeRow"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/mainDisplay"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/displayBackground"
+            android:gravity="right"
+            android:inputType="textPersonName"
+            android:singleLine="false"
+            android:text="935672"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <LinearLayout
+            android:id="@+id/bodyRow"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mainDisplay">
+
+            <LinearLayout
+                android:id="@+id/keyPadColumns"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="vertical"
+                android:weightSum="1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mainDisplay">
+
+                <LinearLayout
+                    android:id="@+id/binaryPadRow"
+                    style="?@android:attr/buttonBarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/scrollView"
+                    app:layout_constraintTop_toBottomOf="@+id/mainDisplay">
+
+                    <Button
+                        android:id="@+id/keyPad0"
+                        style="@style/AppTheme.KeyPadButton.BinaryButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="0"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                        android:textSize="70px" />
+
+                    <Button
+                        android:id="@+id/keyPad1"
+                        style="@style/AppTheme.KeyPadButton.BinaryButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:elevation="0dp"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+                        android:textSize="70px" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/padRowX23"
+                    style="?@android:attr/buttonBarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginStart="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/scrollView"
+                    app:layout_constraintTop_toBottomOf="@+id/binaryPadRow">
+
+                    <Button
+                        android:id="@+id/keyPadX"
+                        style="@style/AppTheme.KeyPadButton"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:text="DEL" />
+
+                    <Button
+                        android:id="@+id/keyPad2"
+                        style="@style/AppTheme.KeyPadButton"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/keyPadBackground"
+                        android:text="2" />
+
+                    <Button
+                        android:id="@+id/keyPad3"
+                        style="@style/AppTheme.KeyPadButton"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/keyPadBackground"
+                        android:text="3" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/padRow456"
+                    style="?@android:attr/buttonBarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginStart="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/scrollView"
+                    app:layout_constraintTop_toBottomOf="@+id/padRowX23">
+
+                    <Button
+                        android:id="@+id/keyPad4"
+                        style="@style/AppTheme.KeyPadButton"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/keyPadBackground"
+                        android:text="4" />
+
+                    <Button
+                        android:id="@+id/keyPad5"
+                        style="@style/AppTheme.KeyPadButton"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/keyPadBackground"
+                        android:text="5" />
+
+                    <Button
+                        android:id="@+id/keyPad6"
+                        style="@style/AppTheme.KeyPadButton"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/keyPadBackground"
+                        android:text="6" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/padRow789"
+                    style="?@android:attr/buttonBarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginStart="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/scrollView"
+                    app:layout_constraintTop_toBottomOf="@+id/padRow456">
+
+                    <Button
+                        android:id="@+id/keyPad7"
+                        style="@style/AppTheme.KeyPadButton"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/keyPadBackground"
+                        android:text="7" />
+
+                    <Button
+                        android:id="@+id/keyPad8"
+                        style="@style/AppTheme.KeyPadButton"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/keyPadBackground"
+                        android:text="8" />
+
+                    <Button
+                        android:id="@+id/keyPad9"
+                        style="@style/AppTheme.KeyPadButton"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/keyPadBackground"
+                        android:text="9" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/padRowABC"
+                    style="?@android:attr/buttonBarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginStart="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/scrollView"
+                    app:layout_constraintTop_toBottomOf="@+id/padRow789">
+
+                    <Button
+                        android:id="@+id/keyPadA"
+                        style="@style/AppTheme.KeyPadButton"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/keyPadBackground"
+                        android:text="A" />
+
+                    <Button
+                        android:id="@+id/keyPadB"
+                        style="@style/AppTheme.KeyPadButton"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/keyPadBackground"
+                        android:text="B" />
+
+                    <Button
+                        android:id="@+id/keyPadC"
+                        style="@style/AppTheme.KeyPadButton"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/keyPadBackground"
+                        android:text="C" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/padRowDEF"
+                    style="?@android:attr/buttonBarStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginStart="0dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/scrollView"
+                    app:layout_constraintTop_toBottomOf="@+id/padRowABC">
+
+                    <Button
+                        android:id="@+id/keyPadD"
+                        style="@style/AppTheme.KeyPadButton"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/keyPadBackground"
+                        android:text="D" />
+
+                    <Button
+                        android:id="@+id/keyPadE"
+                        style="@style/AppTheme.KeyPadButton"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/keyPadBackground"
+                        android:text="E" />
+
+                    <Button
+                        android:id="@+id/keyPadF"
+                        style="@style/AppTheme.KeyPadButton"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/keyPadBackground"
+                        android:text="F" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/keyPadColumns"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mainDisplay"
+                app:layout_constraintVertical_bias="0.0">
+
+                <LinearLayout
+                    android:id="@+id/scrollRow"
+                    style="?@android:attr/buttonBarStyle"
+                    android:layout_width="105dp"
+                    android:layout_height="415dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="0dp"
+                    android:orientation="vertical"
+                    tools:layout_editor_absoluteX="271dp">
+
+                    <Button
+                        android:id="@+id/opToBin"
+                        style="@style/AppTheme.OperationButton.Odd"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:text="BIN"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+                    <Button
+                        android:id="@+id/opToHex"
+                        style="@style/AppTheme.OperationButton.Even"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:text="HEX"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+                    <Button
+                        android:id="@+id/opToDec"
+                        style="@style/AppTheme.OperationButton.Odd"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:text="DEC"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+                    <Button
+                        android:id="@+id/opAdd"
+                        style="@style/AppTheme.OperationButton.Even"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:text="ADD"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+                    <Button
+                        android:id="@+id/opSub"
+                        style="@style/AppTheme.OperationButton.Odd"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:text="SUB"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/padRowMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <ImageButton
+                android:id="@+id/keyPadSettings"
+                android:layout_width="115dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/keyPadBinaryBackground"
+                android:src="@android:drawable/ic_menu_preferences">
+
+            </ImageButton>
+
+            <Button
+                android:id="@+id/keyPadClear"
+                android:layout_width="115dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/keyPadBinaryBackground"
+                android:text="CLEAR"
+                android:textColor="@color/keyPadText" />
+
+            <Button
+                android:id="@+id/keyPadEquals"
+                android:layout_width="117dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/keyPadBinaryBackground"
+                android:text="="
+                android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                android:textColor="@color/keyPadText" />
+        </LinearLayout>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

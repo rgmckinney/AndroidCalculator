@@ -1,0 +1,49 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.KeyPadButton">
+        <item name="android:background">@color/keyPadBackground</item>
+        <item name="android:textColor">@color/keyPadText</item>
+    </style>
+
+    <style name="AppTheme.TypeButton">
+        <item name="android:colorBackground">@color/keyPadBackground</item>
+        <item name="android:background">@color/keyPadBackground</item>
+        <item name="android:textColor">@color/keyPadText</item>
+    </style>
+
+    <style name="AppTheme.OperationButton">
+        <item name="android:textColor">@color/keyPadText</item>
+    </style>
+
+    <style name="AppTheme.OperationButton.Odd" parent="AppTheme.OperationButton">
+        <item name="android:background">@color/opBackgroundOdd</item>
+    </style>
+
+    <style name="AppTheme.OperationButton.Even" parent="AppTheme.OperationButton">
+        <item name="android:background">@color/opBackgroundEven</item>
+    </style>
+
+    <style name="AppTheme.Display">
+        <item name="android:colorBackground">@color/displayBackground</item>
+        <item name="android:background">@color/displayBackground</item>
+        <item name="android:textColor">@color/displayText</item>
+    </style>
+
+    <style name="AppTheme.KeyPadButton.BinaryButton" parent="AppTheme.KeyPadButton">
+        <item name="android:background">@color/keyPadBinaryBackground</item>
+    </style>
+
+    <style name="AppTheme.KeyPadButton.MainButton" parent="AppTheme.KeyPadButton">
+        <item name="android:background">@color/keyPadBinaryBackground</item>
+    </style>
+
+</resources>

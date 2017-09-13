@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#291b4c</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="keyPadBinaryBackground">#522a7a</color>
+    <color name="keyPadBackground">#422c7a</color>
+    <color name="keyPadText">#FFFFFF</color>
+
+    <color name="opBackgroundOdd">#590748</color>
+    <color name="opBackgroundOddSelected">#772548</color>
+    <color name="opBackgroundEven">#59062e</color>
+    <color name="opBackgroundEvenSelected">#77242e</color>
+
+    <color name="displayBackground">#aba7ce</color>
+    <color name="displayText">#000000</color>
+
+    <color name="typeSelected">#7b6aa8</color>
+</resources>
